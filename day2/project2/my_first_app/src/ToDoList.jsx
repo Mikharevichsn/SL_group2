@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import './ToDoList.css';
 
 const ToDoList = () => {
   const [inputText, setInputText] = useState('');
@@ -42,7 +43,7 @@ const ToDoList = () => {
   };
 
   return (
-    <div>
+    <div className="todo-wrapper">
       <input
         type="text"
         value={inputText}
@@ -57,7 +58,10 @@ const ToDoList = () => {
         {tasks.map((elem) => {
           return (
             <li key={elem.id}>
-              {elem.title} <button onClick={() => del(elem.id)}>Удалить</button>
+              {elem.title}{' '}
+              <button className="btn-delete" onClick={() => del(elem.id)}>
+                Удалить
+              </button>
             </li>
           );
         })}

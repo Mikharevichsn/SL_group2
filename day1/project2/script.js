@@ -295,3 +295,94 @@ const arr = [1000, 2000, 3000, 4000, 5000];
 
 // const key = 'name';
 // console.log(obj[key]);
+
+// -----------
+// Асинхронность
+
+// let promise = new Promise((resolve, reject) => {
+//   const rnd = Math.random();
+//   if (rnd > 0.5) {
+//     setTimeout(() => {
+//       // переведёт промис в состояние fulfilled с результатом "result"
+//       resolve('result');
+//     }, 2000);
+//   } else {
+//     reject('Ошибка');
+//   }
+// });
+
+// promise
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     alert('Error: ' + err);
+//   });
+
+// new Promise((resolve, reject) => {
+//   const rnd = Math.random();
+//   if (rnd > 0.5) {
+//     setTimeout(() => {
+//       // переведёт промис в состояние fulfilled с результатом "result"
+//       resolve('result');
+//     }, 2000);
+//   } else {
+//     reject('Ошибка');
+//   }
+// })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     alert('Error: ' + err);
+//   });
+
+// --------------
+// fetch
+
+// fetch('https://api.thecatapi.com/v1/images/search')
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(3);
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log('error: ', err);
+//   });
+
+const fetchData = async () => {
+  try {
+    console.log('3 - 1');
+    const response = await fetch('https://api.thecatapi.com/v1/images/search');
+    console.log('3 - 2');
+    const data = await response.json();
+    console.log('3 - 3');
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+console.log(1);
+console.log(2);
+fetchData();
+
+console.log(4);
+console.log(5);
+
+// -----------
+// try catch
+
+// console.log(1);
+// console.log(2);
+
+// try {
+//   console.log(x);
+// } catch (err) {
+//   console.log(err);
+// }
+
+// console.log(3);
+// console.log(4);
