@@ -1,0 +1,33 @@
+.menu-wrapper {
+  background-color: #1baa0e;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      margin-right: 10px;
+      background-color: #d1ff2b;
+
+      &:hover {
+        background-color: #13ff26;
+      }
+
+      a {
+        display: block;
+        padding: 5px 10px;
+        color: #000;
+        text-decoration: none;
+      }
+    }
+
+    // li:hover {
+    //   background-color: #13ff26;
+    // }
+  }
+}
